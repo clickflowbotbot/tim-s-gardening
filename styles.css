@@ -1,0 +1,375 @@
+:root {
+    --primary: #2d5a27;
+    --primary-dark: #1e3d1a;
+    --accent: #8bc34a;
+    --neutral-100: #ffffff;
+    --neutral-200: #f4f7f4;
+    --neutral-300: #e0e0e0;
+    --neutral-800: #2d2d2d;
+    --neutral-900: #1a1a1a;
+    --shadow: 0 10px 30px rgba(0,0,0,0.1);
+    --radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--neutral-800);
+    line-height: 1.6;
+    background-color: var(--neutral-100);
+}
+
+h1, h2, h3 {
+    font-family: 'Lexend Deca', sans-serif;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--neutral-200);
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 15px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--neutral-800);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-cta {
+    background: var(--primary);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+}
+
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hero Sections Pattern */
+#hero, #cta-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#hero {
+    min-height: 100vh;
+}
+
+#cta-banner {
+    min-height: 60vh;
+}
+
+#hero img, #cta-banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1;
+}
+
+.hero-content, .cta-content {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    max-width: 800px;
+    padding: 0 24px;
+}
+
+.hero-content h1, .cta-content h2 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+.hero-content p, .cta-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--primary);
+    margin-left: 15px;
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+    margin-left: 15px;
+}
+
+/* Trust Bar */
+.trust-bar {
+    background: var(--primary);
+    color: white;
+    padding: 30px 0;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+/* Services */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-img-wrapper {
+    height: 240px;
+    width: 100%;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 30px;
+}
+
+/* About Section */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* Testimonials */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.testimonial-card {
+    padding: 40px;
+    background: var(--neutral-200);
+    border-radius: var(--radius);
+}
+
+.stars {
+    color: #ffc107;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.client {
+    margin-top: 20px;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    background: var(--neutral-900);
+    color: white;
+    padding: 80px 0 30px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-brand h3 { font-size: 1.5rem; color: var(--accent); }
+.footer-contact h4, .footer-links h4 { margin-bottom: 20px; }
+.footer-contact a, .footer-links a {
+    color: var(--neutral-300);
+    text-decoration: none;
+}
+
+.footer-links ul { list-style: none; }
+.footer-links li { margin-bottom: 10px; }
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 30px;
+    color: var(--neutral-300);
+    font-size: 0.9rem;
+}
+
+/* Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-secondary, .btn-outline {
+        margin-left: 0;
+        margin-top: 10px;
+        display: block;
+    }
+
+    #hero {
+        min-height: 80vh;
+    }
+}
